@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import search_icon from '../assets/search.png'
 import clear_icon from '../assets/clear.png'
 import rain_icon from '../assets/rain.png'
@@ -9,6 +9,27 @@ import humidity_icon from '../assets/humidity.png'
 import cloud_icon from '../assets/cloud.png'
 
 function Weather() {
+
+  const sendRequest = async (city_name) => {
+    try {
+      const url = `http://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_API_KEY}&q=${city_name}&aqi=no`;
+      //const url = `http://api.weatherapi.com/v1/current.json?key=395ca541185a4fcfa13182343251305&q=New York&aqi=no`
+      
+
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+    }
+    catch (error) {
+      console.error("Error fetching weather data:", error);
+    }
+  }
+
+  useEffect(() => {
+    const city_name = "New York"; 
+    sendRequest(city_name);
+  },[])
+
   return (
     <div className='mainContainer place-self-center p-8 rounded-md bg-gray-100 w-[500px] shadow-lg'>
       <div className="search flex justify-between items-center mb-6 bg-white rounded-lg overflow-hidden shadow-md">
