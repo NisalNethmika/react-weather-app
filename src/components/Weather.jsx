@@ -13,9 +13,8 @@ function Weather() {
   const sendRequest = async (city_name) => {
     try {
       const url = `http://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_API_KEY}&q=${city_name}&aqi=no`;
-      //const url = `http://api.weatherapi.com/v1/current.json?key=395ca541185a4fcfa13182343251305&q=New York&aqi=no`
       
-
+    
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
