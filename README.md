@@ -1,12 +1,38 @@
-# React + Vite
+# React Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A weather application built with React and Tailwind CSS that fetches real-time weather data using the WeatherAPI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-time Weather Data**: Displays current temperature, humidity, and wind speed
+- **Location-based Weather**: Default location set to Colombo with ability to search any city
+- **Visual Weather Indicators**: Shows appropriate weather icons based on conditions
+- **Modern UI**: Clean interface with gradient backgrounds and card-based layout
 
-## Expanding the ESLint configuration
+## Error Handling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This application includes robust error handling to ensure a smooth user experience:
+
+- **Empty Search Validation**: Prevents API calls with empty search terms
+- **API Error Management**: Catches and displays meaningful error messages from the API
+- **Failed Request Handling**: Gracefully handles network errors and API failures
+- **User Feedback**: Provides clear alert messages when errors occur
+- **State Management**: Resets weather display when errors occur to prevent displaying incorrect data
+
+## Technology Stack
+
+- **React 19**: Latest version of React for building the UI
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **WeatherAPI**: Third-party API for accurate weather data (weatherapi.com)
+- **Environment Variables**: Secure API key management using .env
+
+## Project Structure
+
+- `/src`: Source code
+  - `/assets`: Weather and UI icons
+  - `/components`: React components including Weather.jsx
+  - `App.jsx`: Main application component
+  - `main.jsx`: Application entry point
+  - `index.css`: Global styles and Tailwind imports
+
+![preview image](./public/preview.png)

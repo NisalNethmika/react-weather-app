@@ -2,7 +2,7 @@
 @import 'tailwindcss';
 
 * {
-  @apply mt-0 p-0 box-border;
+  @apply mt-0 box-border;
 }
 
 .App {
